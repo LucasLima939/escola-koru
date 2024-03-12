@@ -1,16 +1,11 @@
 # teste_koru
 
-A new Flutter project.
+Este é um projeto de testes da Escola Korú
 
-## Getting Started
+## Comandos basicos do Git
+- git add <nome-arquivo> / git add .
+- git commit -m "minha mensagem"
+- git push -u origin <nome-branch>
+- git status
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
