@@ -11,5 +11,7 @@ Este é um projeto de testes da Escola Korú
 - git status
 - git checkout <nome-branch>
 - git checkout -b <nome-branch>
+- git pull
+- git pull origin <nome-branch>
 
 
