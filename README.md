@@ -16,3 +16,11 @@ Este é um projeto de testes da Escola Korú
 - git reset --soft HEAD~1
 - git branch
 
+## Git Flow
+- main (principal)
+- develop (time)
+- feat/nome-branch
+- fix/nome-branch
+- hotfix/nome-branch
+- release/nome-branch-v1
+
