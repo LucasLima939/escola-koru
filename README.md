@@ -1,4 +1,4 @@
-# aulas_koru
+# escola_koru
 
 Este projeto agrupa exemplos das aulas ministradas pelo professor Lucas de Miranda na Escola Korú, ordenado por módulos e por aulas.
 
