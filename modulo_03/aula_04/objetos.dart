@@ -23,13 +23,13 @@ class Pessoa {
         cidade = json['cidade'];
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'nome': nome,
-    'idade': idade,
-    'cidade': cidade,
-  };
+        'nome': nome,
+        'idade': idade,
+        'cidade': cidade,
+      };
 }
 
-void main(){
+void main() {
   Pessoa vinicius = Pessoa('Vinicius', 31, 'Salvador');
 
   print(vinicius.toJson());
