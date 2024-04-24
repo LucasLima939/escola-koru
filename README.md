@@ -1,10 +1,13 @@
 # escola_koru
 
-Este projeto agrupa exemplos das aulas ministradas pelo professor Lucas de Miranda na Escola Korú, ordenado por módulos e por aulas.
+Este projeto agrupa exemplos das aulas ministradas pelo professor Lucas de Miranda na Escola Korú.
 
-Abaixo temos uma lista dos principais comandos do Git para o dia-a-dia de desenvolvimento.
+## Árvore de Widgets do Flutter
+<img src="https://cdn-images-1.medium.com/v2/resize:fit:1600/1*Tc0kB9YXL4Bj6tonRJlH0w.png" width="500"/>
 
 ## Comandos basicos do Git
+Abaixo temos uma lista dos principais comandos do Git para o dia-a-dia de desenvolvimento:
+
 - git add nome-arquivo
 - git add .
 - git commit -m "minha mensagem"
