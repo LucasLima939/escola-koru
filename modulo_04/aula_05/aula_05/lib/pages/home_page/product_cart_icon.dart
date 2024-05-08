@@ -34,7 +34,8 @@ class _ProductCartIconState extends State<ProductCartIcon> {
                 IconButton(
                     onPressed: () =>
                         Navigator.of(context).push(MaterialPageRoute<void>(
-                          builder: (BuildContext context) => const CartPage(),
+                          builder: (BuildContext context) => BlocProvider.value(
+                              value: bloc, child: const CartPage()),
                         )),
                     icon: const Icon(
                       Icons.shopping_basket_outlined,

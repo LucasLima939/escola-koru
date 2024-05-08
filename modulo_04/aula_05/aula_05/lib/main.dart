@@ -1,5 +1,4 @@
 import 'package:aula_03/blocs/home_bloc/home_bloc.dart';
-import 'package:aula_03/pages/cart_page/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'pages/home_page/home_page.dart';
@@ -13,27 +12,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => HomeBloc(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: 'Roboto',
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.yellowAccent,
-            primary: Colors.blueGrey,
-            secondary: Colors.blue,
-          ),
-          useMaterial3: true,
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.yellowAccent,
+          primary: Colors.blueGrey,
+          secondary: Colors.blue,
         ),
-        initialRoute: '/',
-        routes: {
-          // When navigating to the "/" route, build the FirstScreen widget.
-          '/': (context) => const HomePage(),
-          // When navigating to the "/second" route, build the SecondScreen widget.
-          '/cart': (context) => const CartPage(),
-        },
+        useMaterial3: true,
+      ),
+      home: BlocProvider(
+        create: (_) => HomeBloc(),
+        child: const HomePage(),
       ),
     );
   }

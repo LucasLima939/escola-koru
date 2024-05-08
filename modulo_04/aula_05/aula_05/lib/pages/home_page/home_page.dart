@@ -3,7 +3,6 @@ import 'package:aula_03/blocs/home_bloc/home_event.dart';
 import 'package:aula_03/blocs/home_bloc/home_state.dart';
 import 'package:aula_03/entities/home_entities/product_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'product_cart_icon.dart';
 import 'product_tile.dart';
