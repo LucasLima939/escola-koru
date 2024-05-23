@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "886764087128",
+    "project_id": "escola-koru",
+    "storage_bucket": "escola-koru.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886764087128:android:f5ba7c0333bb59b8e7e72d",
+        "android_client_info": {
+          "package_name": "com.example.openstreetmap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCHOfWKdUrLIiQUuvaypea_yrfBDCMSd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
