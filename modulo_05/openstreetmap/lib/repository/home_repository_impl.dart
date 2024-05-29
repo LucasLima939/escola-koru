@@ -24,7 +24,8 @@ class HomeRepositoryImpl implements HomeRepository {
     var url = Uri.https('nominatim.openstreetmap.org', 'reverse', {'lat': lat, 'lon': lon, 'format': 'jsonv2'});
     try {
       var response = await http.get(url); // CHAMAR A API CORRETAMENTE
-      if (response.statusCode == 200) { // EM CASO DE SUCESSO
+      if (response.statusCode == 200) {
+        // EM CASO DE SUCESSO
         await localStorageDrive.set(url.toString(), jsonDecode(response.body)); // ARMAZENAR LOCALMENTE A RESPOSTA
       }
     } catch (e) {
@@ -36,10 +37,15 @@ class HomeRepositoryImpl implements HomeRepository {
 
   @override
   Future<LocationEntity?> getLocation() async {
+    LocationEntity? response;
     try {
-      final response = await locationAdapter.getUserLocation();
-      if (response != null) {
-        await firebaseAdapter.setLocation(response);
+      if (await locationAdapter.hasService()) {
+        if (await locationAdapter.hasPermission()) {
+          response = await locationAdapter.getUserLocation();
+          if (response != null) {
+            await firebaseAdapter.setLocation(response);
+          }
+        }
       }
       return response;
     } catch (e) {
