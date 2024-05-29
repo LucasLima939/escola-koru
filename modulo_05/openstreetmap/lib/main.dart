@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
 import 'package:openstreetmap/adapters/firebase_adapter.dart';
-import 'package:openstreetmap/adapters/location_adapter.dart';
 import 'package:openstreetmap/adapters/shared_preferences_adapter.dart';
 import 'package:openstreetmap/blocs/home_bloc.dart';
 import 'package:openstreetmap/firebase_options.dart';
 import 'package:openstreetmap/repository/home_repository_impl.dart';
 
+import 'adapters/location_adapter_impl.dart';
 import 'pages/home_page.dart';
 
 Future<void> main() async {
@@ -18,7 +19,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final homeBloc = HomeBloc(HomeRepositoryImpl(LocationAdapter(), SharedPreferencesAdapter(), FirebaseAdapter()));
+  final homeBloc = HomeBloc(HomeRepositoryImpl(LocationAdapterImpl(Location()), SharedPreferencesAdapter(), FirebaseAdapter()));
   MyApp({super.key});
 
   @override
