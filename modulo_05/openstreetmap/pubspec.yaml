@@ -37,6 +37,7 @@ dependencies:
   firebase_core: ^2.31.1
   cloud_firestore: ^4.17.4
   equatable: ^2.0.5
+  dio: ^5.4.3+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -48,6 +49,8 @@ dev_dependencies:
     sdk: flutter
   mocktail: ^1.0.3
   faker: ^2.1.0
+  bloc_test: ^9.1.7
+  mockito: ^5.4.4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

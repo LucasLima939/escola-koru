@@ -16,10 +16,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Future<void> _onGetAddress(GetAddress event, Emitter<HomeState> emit) async {
     emit(HomeLoadingState());
 
-    final address = await _repository.getAddress(
+    final response = await _repository.getAddress(
         event.latitude.toString(), event.longitude.toString());
-    if (address != null) {
-      emit(HomeAddressSuccessState(address));
+
+    if (response != null) {
+      emit(HomeAddressSuccessState(response));
     } else {
       emit(HomeFailureState());
     }
@@ -29,10 +30,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       GetLocation event, Emitter<HomeState> emit) async {
     emit(HomeLoadingState());
 
-    final location = await _repository.getLocation();
+    final response = await _repository.getLocation();
 
-    if (location != null) {
-      emit(HomeLocationSuccessState(location));
+    if(response != null){
+      emit(HomeLocationSuccessState(response));
     } else {
       emit(HomeFailureState());
     }

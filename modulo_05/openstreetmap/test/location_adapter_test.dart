@@ -21,7 +21,7 @@ class LocationMock extends Mock implements Location {
 }
 
 void main() {
-  late LocationMock location;
+  late LocationMock location; // Dependência
   late LocationDrive locationAdapter; // SUT -> System Under Test
   late LocationEntity expectedResponse;
 
@@ -30,7 +30,7 @@ void main() {
 
   setUp(() {
     location = LocationMock(); // Pacote falso
-    locationAdapter = LocationAdapterImpl(location);
+    locationAdapter = LocationAdapterImpl(location); // Inversão de dependências
     expectedResponse = LocationModel(latitude, longitude);
 
     TestWidgetsFlutterBinding.ensureInitialized();

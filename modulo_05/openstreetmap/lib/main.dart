@@ -19,7 +19,8 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final homeBloc = HomeBloc(HomeRepositoryImpl(LocationAdapterImpl(Location()), SharedPreferencesAdapter(), FirebaseAdapter()));
+  final homeBloc = HomeBloc(HomeRepositoryImpl(LocationAdapterImpl(Location()),
+      SharedPreferencesAdapter(), FirebaseAdapter()));
   MyApp({super.key});
 
   @override
