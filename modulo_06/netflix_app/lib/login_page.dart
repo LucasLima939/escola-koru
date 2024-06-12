@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:netflix_app/alert_dialog/custom_dialog_factory.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback? onLogin;
@@ -12,13 +15,15 @@ class _LoginPageState extends State<LoginPage> {
   late final emailController = TextEditingController();
   late final passwordController = TextEditingController();
 
-  bool get _isEmailValid => emailController.text.isNotEmpty && emailController.text.contains('@');
+  bool get _isEmailValid =>
+      emailController.text.isNotEmpty && emailController.text.contains('@');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextFormField(
               controller: emailController,
@@ -33,6 +38,8 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   if (_isEmailValid && passwordController.text.isNotEmpty) {
                     widget.onLogin?.call();
+                  } else {
+                    _showErrorDialog();
                   }
                 },
                 child: const Text('Login')),
@@ -41,4 +48,17 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  void _showErrorDialog() => showDialog(
+        context: context,
+        builder: (context) => CustomDialogFactory(
+          key: Key('error-dialog'),
+          title: Text('Aviso!'),
+          content: Text('Digite o email ou a senha corretamente'),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.pop(context), child: Text('OK'))
+          ],
+        ).buildDialog(isAndroid: false),
+      );
 }
