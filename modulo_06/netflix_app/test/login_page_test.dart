@@ -1,7 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:netflix_app/login_page.dart';
+import 'package:netflix_app/login_mvc/login_view.dart';
 
 void main() {
   final email = faker.internet.email();
@@ -12,7 +12,7 @@ void main() {
     counter++;
   }
 
-  Widget makeSut() => MaterialApp(home: LoginPage(onLogin: incrementCounter));
+  Widget makeSut() => MaterialApp(home: LoginView(onLogin: incrementCounter));
 
   setUp(() {
     counter = 0;
